@@ -251,6 +251,7 @@
                             echo "<th>供應商名稱</th>";
                             echo "<th>供應商電話</th>";
                             echo "<th>供應商地址</th>";
+                            echo "<th>供應商營業時間</th>";
                             echo "</tr>";
                             
                             while($result=mysqli_fetch_object($stmt)){
