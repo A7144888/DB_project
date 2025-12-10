@@ -327,6 +327,7 @@
                             echo "<th>供應商名稱</th>";
                             echo "<th>供應商電話</th>";
                             echo "<th>供應商地址</th>";
+                            echo "<th>供應商營業時間</th>";
                             echo "<th>操作</th>";
                             echo "</tr>";
                             
@@ -335,6 +336,7 @@
                                 echo "<td>".$result->spName."</td>";
                                 echo "<td>".$result->spPhone."</td>";
                                 echo "<td>".$result->spAddress."</td>";
+                                echo "<td>".$result->spTime."</td>";
                                 echo '<td>';
                                 echo '<form method="POST" action="supply_mdy.php?spName=' . $result->spName . '" style="display:inline;">';
                                 echo '<input type="submit" value="修改" class="btn-edit">';
@@ -363,6 +365,10 @@
                             <div class="form-group">
                                 <label>供應商地址:</label>
                                 <input type="text" name="spAddress" required>
+                            </div>
+                             <div class="form-group">
+                                <label>供應商營業時間:</label>
+                                <input type="text" name="spTime" required>
                             </div>
                             <input type="submit" value="新增供應商">
                         </form>
