@@ -23,7 +23,7 @@
         }
 
         .modern-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #667eea;
             padding: 25px 40px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -99,11 +99,8 @@
         }
 
         .y:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-left-color: #ffd700;
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            color: #2d3748;
         }
 
         .main-content {
@@ -134,7 +131,7 @@
         }
 
         th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #667eea;
             color: white;
             padding: 16px;
             text-align: center;
@@ -205,7 +202,7 @@
 
         input[type="submit"],
         button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #667eea;
             color: white;
             border: none;
             padding: 12px 30px;
@@ -220,8 +217,7 @@
 
         input[type="submit"]:hover,
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            background: #667eea;
         }
 
         .btn-delete {
@@ -230,7 +226,7 @@
         }
 
         .btn-delete:hover {
-            box-shadow: 0 6px 20px rgba(245, 101, 101, 0.6);
+            background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
         }
 
         .btn-edit {
@@ -239,7 +235,7 @@
         }
 
         .btn-edit:hover {
-            box-shadow: 0 6px 20px rgba(72, 187, 120, 0.6);
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
         }
 
         td form {
@@ -315,6 +311,11 @@
                     <li>
                         <a href="employee.php">
                             <p class="y">員工</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../analysis/analysis.php">
+                            <p class="y">查詢</p>
                         </a>
                     </li>
                 </ul>

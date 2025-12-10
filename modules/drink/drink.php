@@ -24,7 +24,7 @@
 
         /* 现代化的头部 */
         .modern-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #667eea;
             padding: 25px 40px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -101,11 +101,8 @@
         }
 
         .y:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-left-color: #ffd700;
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            color: #2d3748;
         }
 
         /* 主内容区域 */
@@ -131,7 +128,7 @@
         }
 
         th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #667eea;
             color: white;
             padding: 16px;
             text-align: center;
@@ -158,7 +155,7 @@
         /* 现代化按钮 */
         a[href*="edit"] {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #667eea;
             color: white !important;
             text-decoration: none;
             padding: 12px 30px;
@@ -171,9 +168,7 @@
         }
 
         a[href*="edit"]:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
+            background: #667eea;}
 
         @media screen and (max-width: 767px) {
             .modern-header h1 {
@@ -242,6 +237,11 @@
                     <li>
                         <a href="../employee/employee.php">
                             <p class="y">員工</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../analysis/analysis.php">
+                            <p class="y">查詢</p>
                         </a>
                     </li>
                 </ul>
