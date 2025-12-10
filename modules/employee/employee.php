@@ -22,7 +22,6 @@
             width: 100%;
         }
 
-        /* 现代化的头部 */
         .modern-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 25px 40px;
@@ -65,7 +64,6 @@
             z-index: 2;
         }
 
-        /* 现代化的侧边栏 */
         .modern-sidebar {
             background: white;
             box-shadow: 2px 0 20px rgba(0, 0, 0, 0.08);
@@ -108,7 +106,6 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* 主内容区域 */
         .main-content {
             padding: 40px;
             background: rgba(255, 255, 255, 0.95);
@@ -118,7 +115,6 @@
             min-height: calc(100vh - 200px);
         }
 
-        /* 表格样式 */
         table {
             width: 100%;
             border-collapse: separate;
@@ -155,7 +151,6 @@
             border-bottom: none;
         }
 
-        /* 现代化按钮 */
         a[href*="edit"] {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -207,16 +202,13 @@
 </head>
 
 <body>
-    <!-- 现代化头部 -->
     <div class="modern-header">
         <img src="../../images/下載 (1).jpg" class="home_img">
         <h1>Drinker家具行</h1>
     </div>
 
-    <!-- 主容器 -->
     <div class="container-fluid" style="padding: 0;">
         <div class="row" style="margin: 0;">
-            <!-- 现代化侧边栏 -->
             <div class="col-sm-2 modern-sidebar" style="padding: 0;">
                 <ul class="nav sidenav-nav">
                     <li>
@@ -225,7 +217,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="drink.php">
+                        <a href="../drink/drink.php">
                             <p class="y">家具資訊</p>
                         </a>
                     </li>
@@ -240,46 +232,43 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../employee/employee.php">
+                        <a href="employee.php">
                             <p class="y">員工</p>
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- 主内容区域 -->
             <div class="col-sm-10">
                 <div class="main-content">
                     <?php
                         include "../../config/db_conn.php";
-                        $query = ("Select * From drink");
+                        $query = ("Select * From employee");
                         
                         if($stmt = $db->query($query)){
                             echo "<table>";
                             echo "<tr>";
-                            echo "<th>家具編號</th>";
-                            echo "<th>家具名稱</th>";
-                            echo "<th>家具材質</th>";
-                            echo "<th>家具價錢</th>";
-                            echo "<th>樓層</th>";
-                            echo "<th>供應商名稱</th>";
+                            echo "<th>員工編號</th>";
+                            echo "<th>員工姓名</th>";
+                            echo "<th>員工電話</th>";
+                            echo "<th>職位</th>";
+                            echo "<th>所屬樓層</th>";
                             echo "</tr>";
                             
                             while($result=mysqli_fetch_object($stmt)){
                                 echo "<tr>";
-                                echo "<td>".$result->dId."</td>";
-                                echo "<td>".$result->dName."</td>";
-                                echo "<td>".$result->dDescription."</td>";
-                                echo "<td>".$result->dPrice."</td>";
+                                echo "<td>".$result->empId."</td>";
+                                echo "<td>".$result->empName."</td>";
+                                echo "<td>".$result->empPhone."</td>";
+                                echo "<td>".$result->empPosition."</td>";
                                 echo "<td>".$result->stName."</td>";
-                                echo "<td>".$result->spName."</td>";
                                 echo "</tr>";
                             }
                             echo "</table>";
                         }
                     ?>
                     <div style="text-align: right; margin-top: 20px;">
-                        <a href="drink_edit.php">編輯家具資訊</a>
+                        <a href="employee_edit.php">編輯員工資訊</a>
                     </div>
                 </div>
             </div>
@@ -288,3 +277,4 @@
 </body>
 
 </html>
+

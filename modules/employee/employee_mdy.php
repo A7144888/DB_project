@@ -22,7 +22,6 @@
             width: 100%;
         }
 
-        /* 现代化的头部 */
         .modern-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 25px 40px;
@@ -65,7 +64,6 @@
             z-index: 2;
         }
 
-        /* 现代化的侧边栏 */
         .modern-sidebar {
             background: white;
             box-shadow: 2px 0 20px rgba(0, 0, 0, 0.08);
@@ -108,7 +106,6 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* 主内容区域 */
         .main-content {
             padding: 40px;
             background: rgba(255, 255, 255, 0.95);
@@ -118,59 +115,73 @@
             min-height: calc(100vh - 200px);
         }
 
-        /* 表格样式 */
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: 20px 0;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        .main-content h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
         }
 
-        th {
+        .edit-form {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group input:disabled {
+            background: #f7fafc;
+            color: #718096;
+            cursor: not-allowed;
+        }
+
+        input[type="submit"] {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 16px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 14px;
             border: none;
-        }
-
-        td {
-            padding: 14px;
-            text-align: center;
-            border-bottom: 1px solid #e2e8f0;
-            color: #4a5568;
-        }
-
-        tr:hover td {
-            background-color: #f7fafc;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* 现代化按钮 */
-        a[href*="edit"] {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white !important;
-            text-decoration: none;
             padding: 12px 30px;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 14px;
             font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-            margin: 20px 0;
+            width: 100%;
+            margin-top: 10px;
         }
 
-        a[href*="edit"]:hover {
+        input[type="submit"]:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
         }
@@ -195,28 +206,21 @@
                 min-height: auto;
             }
 
-            table {
-                font-size: 12px;
-            }
-
-            th, td {
-                padding: 10px 5px;
+            .edit-form {
+                padding: 20px;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- 现代化头部 -->
     <div class="modern-header">
         <img src="../../images/下載 (1).jpg" class="home_img">
         <h1>Drinker家具行</h1>
     </div>
 
-    <!-- 主容器 -->
     <div class="container-fluid" style="padding: 0;">
         <div class="row" style="margin: 0;">
-            <!-- 现代化侧边栏 -->
             <div class="col-sm-2 modern-sidebar" style="padding: 0;">
                 <ul class="nav sidenav-nav">
                     <li>
@@ -225,7 +229,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="drink.php">
+                        <a href="../drink/drink.php">
                             <p class="y">家具資訊</p>
                         </a>
                     </li>
@@ -240,47 +244,66 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../employee/employee.php">
+                        <a href="employee.php">
                             <p class="y">員工</p>
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- 主内容区域 -->
             <div class="col-sm-10">
                 <div class="main-content">
+                    <h2>修改員工資訊</h2>
+                    
                     <?php
                         include "../../config/db_conn.php";
-                        $query = ("Select * From drink");
+                        $empId = $_GET['empId'];
+                        $query = ("Select * From employee where empId ='".$empId."'");
                         
                         if($stmt = $db->query($query)){
-                            echo "<table>";
-                            echo "<tr>";
-                            echo "<th>家具編號</th>";
-                            echo "<th>家具名稱</th>";
-                            echo "<th>家具材質</th>";
-                            echo "<th>家具價錢</th>";
-                            echo "<th>樓層</th>";
-                            echo "<th>供應商名稱</th>";
-                            echo "</tr>";
+                            $result=mysqli_fetch_object($stmt);
+                            echo '<div class="edit-form">';
+                            echo '<form action="employee_mdysave.php?empId='.$result->empId.'" method="POST">';
                             
-                            while($result=mysqli_fetch_object($stmt)){
-                                echo "<tr>";
-                                echo "<td>".$result->dId."</td>";
-                                echo "<td>".$result->dName."</td>";
-                                echo "<td>".$result->dDescription."</td>";
-                                echo "<td>".$result->dPrice."</td>";
-                                echo "<td>".$result->stName."</td>";
-                                echo "<td>".$result->spName."</td>";
-                                echo "</tr>";
+                            echo '<div class="form-group">';
+                            echo '<label>員工編號:</label>';
+                            echo '<input type="text" value="'.$result->empId.'" disabled>';
+                            echo '</div>';
+                            
+                            echo '<div class="form-group">';
+                            echo '<label>員工姓名:</label>';
+                            echo '<input type="text" name="empName" value="'.$result->empName.'" required>';
+                            echo '</div>';
+                            
+                            echo '<div class="form-group">';
+                            echo '<label>員工電話:</label>';
+                            echo '<input type="text" name="empPhone" value="'.$result->empPhone.'" required>';
+                            echo '</div>';
+                              
+                            echo '<div class="form-group">';
+                            echo '<label>職位:</label>';
+                            echo '<input type="text" name="empPosition" value="'.$result->empPosition.'" required>';
+                            echo '</div>';
+                            
+                            echo '<div class="form-group">';
+                            echo '<label>所屬樓層:</label>';
+                            echo '<select name="stName">';
+                            echo '<option value="">無</option>';
+                            
+                            $storeQuery = "SELECT stName FROM store";
+                            $storeResult = $db->query($storeQuery);
+                            while($store = mysqli_fetch_object($storeResult)){
+                                $selected = ($store->stName == $result->stName) ? 'selected' : '';
+                                echo "<option value='".$store->stName."' ".$selected.">".$store->stName."</option>";
                             }
-                            echo "</table>";
-                        }
+                            echo '</select>';
+                            echo '</div>';
+                            
+                            echo '<input type="submit" value="確認更改">';
+                            echo '</form>';
+                            echo '</div>';
+                        }  
                     ?>
-                    <div style="text-align: right; margin-top: 20px;">
-                        <a href="drink_edit.php">編輯家具資訊</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -288,3 +311,4 @@
 </body>
 
 </html>
+

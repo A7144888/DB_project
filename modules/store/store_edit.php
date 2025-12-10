@@ -310,6 +310,11 @@
                             <p class="y">供應商</p>
                         </a>
                     </li>
+                    <li>
+                        <a href="../employee/employee.php">
+                            <p class="y">員工</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
 

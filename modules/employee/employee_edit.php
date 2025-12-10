@@ -22,7 +22,6 @@
             width: 100%;
         }
 
-        /* 现代化的头部 */
         .modern-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 25px 40px;
@@ -65,7 +64,6 @@
             z-index: 2;
         }
 
-        /* 现代化的侧边栏 */
         .modern-sidebar {
             background: white;
             box-shadow: 2px 0 20px rgba(0, 0, 0, 0.08);
@@ -108,7 +106,6 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* 主内容区域 */
         .main-content {
             padding: 40px;
             background: rgba(255, 255, 255, 0.95);
@@ -118,7 +115,13 @@
             min-height: calc(100vh - 200px);
         }
 
-        /* 表格样式 */
+        .main-content h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
         table {
             width: 100%;
             border-collapse: separate;
@@ -155,24 +158,93 @@
             border-bottom: none;
         }
 
-        /* 现代化按钮 */
-        a[href*="edit"] {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white !important;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-            margin: 20px 0;
+        .add-form {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
-        a[href*="edit"]:hover {
+        .add-form h3 {
+            color: #2d3748;
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        input[type="submit"],
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin: 5px;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-delete {
+            background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
+            box-shadow: 0 4px 15px rgba(245, 101, 101, 0.4);
+        }
+
+        .btn-delete:hover {
+            box-shadow: 0 6px 20px rgba(245, 101, 101, 0.6);
+        }
+
+        .btn-edit {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+        }
+
+        .btn-edit:hover {
+            box-shadow: 0 6px 20px rgba(72, 187, 120, 0.6);
+        }
+
+        td form {
+            display: inline-block;
+            margin: 0;
         }
 
         @media screen and (max-width: 767px) {
@@ -202,21 +274,22 @@
             th, td {
                 padding: 10px 5px;
             }
+
+            .add-form {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- 现代化头部 -->
     <div class="modern-header">
         <img src="../../images/下載 (1).jpg" class="home_img">
         <h1>Drinker家具行</h1>
     </div>
 
-    <!-- 主容器 -->
     <div class="container-fluid" style="padding: 0;">
         <div class="row" style="margin: 0;">
-            <!-- 现代化侧边栏 -->
             <div class="col-sm-2 modern-sidebar" style="padding: 0;">
                 <ul class="nav sidenav-nav">
                     <li>
@@ -225,7 +298,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="drink.php">
+                        <a href="../drink/drink.php">
                             <p class="y">家具資訊</p>
                         </a>
                     </li>
@@ -240,46 +313,87 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../employee/employee.php">
+                        <a href="employee.php">
                             <p class="y">員工</p>
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- 主内容区域 -->
             <div class="col-sm-10">
                 <div class="main-content">
+                    <h2>編輯員工資訊</h2>
+                    
                     <?php
                         include "../../config/db_conn.php";
-                        $query = ("Select * From drink");
+                        $query = ("Select * From employee");
                         
                         if($stmt = $db->query($query)){
                             echo "<table>";
                             echo "<tr>";
-                            echo "<th>家具編號</th>";
-                            echo "<th>家具名稱</th>";
-                            echo "<th>家具材質</th>";
-                            echo "<th>家具價錢</th>";
-                            echo "<th>樓層</th>";
-                            echo "<th>供應商名稱</th>";
+                            echo "<th>員工編號</th>";
+                            echo "<th>員工姓名</th>";
+                            echo "<th>員工電話</th>";
+                            echo "<th>職位</th>";
+                            echo "<th>所屬樓層</th>";
+                            echo "<th>操作</th>";
                             echo "</tr>";
                             
                             while($result=mysqli_fetch_object($stmt)){
                                 echo "<tr>";
-                                echo "<td>".$result->dId."</td>";
-                                echo "<td>".$result->dName."</td>";
-                                echo "<td>".$result->dDescription."</td>";
-                                echo "<td>".$result->dPrice."</td>";
+                                echo "<td>".$result->empId."</td>";
+                                echo "<td>".$result->empName."</td>";
+                                echo "<td>".$result->empPhone."</td>";
+                                echo "<td>".$result->empPosition."</td>";
                                 echo "<td>".$result->stName."</td>";
-                                echo "<td>".$result->spName."</td>";
+                                echo '<td>';
+                                echo '<form method="POST" action="employee_mdy.php?empId=' . $result->empId . '" style="display:inline;">';
+                                echo '<input type="submit" value="修改" class="btn-edit">';
+                                echo '</form>';
+                                echo '<form method="POST" action="employee_del.php?empId=' . $result->empId . '" style="display:inline;">';
+                                echo '<input type="submit" value="刪除" class="btn-delete" onclick="return confirm(\'確定要刪除嗎？\')">';
+                                echo '</form>';
+                                echo '</td>';
                                 echo "</tr>";
                             }
                             echo "</table>";
                         }
                     ?>
-                    <div style="text-align: right; margin-top: 20px;">
-                        <a href="drink_edit.php">編輯家具資訊</a>
+
+                    <div class="add-form">
+                        <h3>新增員工</h3>
+                        <form action="employee_add.php" method="POST">
+                            <div class="form-group">
+                                <label>員工編號:</label>
+                                <input type="text" name="empId" required placeholder="例如: E00006">
+                            </div>
+                            <div class="form-group">
+                                <label>員工姓名:</label>
+                                <input type="text" name="empName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>員工電話:</label>
+                                <input type="text" name="empPhone" required placeholder="例如: 0912-345-678">
+                            </div>
+                            <div class="form-group">
+                                <label>職位:</label>
+                                <input type="text" name="empPosition" required placeholder="例如: 銷售">
+                            </div>
+                            <div class="form-group">
+                                <label>所屬樓層:</label>
+                                <select name="stName">
+                                    <option value="">無</option>
+                                    <?php
+                                        $storeQuery = "SELECT stName FROM store";
+                                        $storeResult = $db->query($storeQuery);
+                                        while($store = mysqli_fetch_object($storeResult)){
+                                            echo "<option value='".$store->stName."'>".$store->stName."</option>";
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <input type="submit" value="新增員工">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -288,3 +402,4 @@
 </body>
 
 </html>
+

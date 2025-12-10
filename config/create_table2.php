@@ -39,8 +39,18 @@
     FOREIGN KEY(stName) REFERENCES Store(stName) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(spName) REFERENCES Supplier(spName) ON DELETE CASCADE ON UPDATE CASCADE
     )";
+    //table4 創建員工
+    $table4 ="CREATE TABLE Employee (
+    empId CHAR(6) NOT NULL,
+    empName VARCHAR(15) NOT NULL,
+    empPhone VARCHAR(15) NOT NULL,
+    empPosition VARCHAR(20) NOT NULL,
+    stName VARCHAR(10) ,
+    PRIMARY KEY (empId),
+    FOREIGN KEY(stName) REFERENCES Store(stName) ON DELETE SET NULL ON UPDATE CASCADE
+    )";
     header('Location: create_data.php');
-    $tables = [$table1, $table2, $table3];
+    $tables = [$table1, $table2, $table3, $table4];
     foreach($tables as $k => $sql){
         $query = @$conn->query($sql);
 

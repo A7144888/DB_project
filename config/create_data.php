@@ -24,5 +24,17 @@ $result = mysqli_query($db,$sql);
 //增加家具資料（範例）
 // 用戶可以透過網頁介面新增
 
+//增加員工資料
+$sql = "INSERT INTO  `employee` (`empId`,`empName`,`empPhone`,`empPosition`,`stName`) VALUE ('E00001','a','0912-345-678','收銀','1F木製家具區') ";
+$result = mysqli_query($db,$sql);
+$sql = "INSERT INTO  `employee` (`empId`,`empName`,`empPhone`,`empPosition`,`stName`) VALUE ('E00002','b','0923-456-789','銷售','2F沙發專區') ";
+$result = mysqli_query($db,$sql);
+$sql = "INSERT INTO  `employee` (`empId`,`empName`,`empPhone`,`empPosition`,`stName`) VALUE ('E00003','c','0934-567-890','銷售','3F床具專區') ";
+$result = mysqli_query($db,$sql);
+$sql = "INSERT INTO  `employee` (`empId`,`empName`,`empPhone`,`empPosition`,`stName`) VALUE ('E00004','d','0945-678-901','收銀他哥','4F廚房用品') ";
+$result = mysqli_query($db,$sql);
+$sql = "INSERT INTO  `employee` (`empId`,`empName`,`empPhone`,`empPosition`,`stName`) VALUE ('E00005','e','0956-789-012','店長(摸魚中()','5F日常家具') ";
+$result = mysqli_query($db,$sql);
+
 header('Location: ../pages/home.html');
 ?>
