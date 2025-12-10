@@ -4,12 +4,16 @@
     $spName         = $_GET["spName"];
     $spPhone        = $_POST["spPhone"];
     $spAddress      = $_POST["spAddress"];
+    $spTime         = $_POST["spTime"];
+
 
     $query = sprintf(
-        'update supplier set spPhone = "%s", spAddress = "%s"  where spName = "%s"',
+        'update supplier set spPhone = "%s", spAddress = "%s"  where spName = "%s"   where spTime = "%s"',
         $spPhone,
         $spAddress,
-        $spName
+        $spName,
+        $spTime
+        
       );
       echo $query . '<br>';
     $stmt = $db->query($query);
