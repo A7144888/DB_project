@@ -21,8 +21,7 @@
             min-height: 100vh;
             width: 100%;
         }
-
-        /* 现代化的头部 */
+       
         .modern-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 25px 40px;
@@ -65,7 +64,6 @@
             z-index: 2;
         }
 
-        /* 现代化的侧边栏 */
         .modern-sidebar {
             background: white;
             box-shadow: 2px 0 20px rgba(0, 0, 0, 0.08);
@@ -108,7 +106,7 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* 主内容区域 */
+     
         .main-content {
             padding: 40px;
             background: rgba(255, 255, 255, 0.95);
@@ -132,7 +130,6 @@
             margin-bottom: 30px;
         }
 
-        /* 现代化按钮 */
         button, .btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -151,7 +148,7 @@
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
         }
 
-        /* 表格样式 */
+   
         table {
             width: 100%;
             border-collapse: separate;
@@ -187,7 +184,7 @@
             border-bottom: none;
         }
 
-        /* 图片容器 */
+    
         .img-container {
             text-align: center;
             margin: 40px 0;
@@ -202,6 +199,41 @@
 
         .img-container img:hover {
             transform: scale(1.02);
+        }
+
+        
+        .furniture-card {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .furniture-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .furniture-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .furniture-card h3 {
+            color: #667eea;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .furniture-card p {
+            color: #718096;
+            font-size: 14px;
+            margin: 0;
         }
 
         /* 响应式设计 */
@@ -229,16 +261,16 @@
 </head>
 
 <body>
-    <!-- 现代化头部 -->
+ 
     <div class="modern-header">
         <img src="../images/下載 (1).jpg" class="home_img">
         <h1>Drinker家具行</h1>
     </div>
 
-    <!-- 主容器 -->
+
     <div class="container-fluid" style="padding: 0;">
         <div class="row" style="margin: 0;">
-            <!-- 现代化侧边栏 -->
+       
             <div class="col-sm-2 modern-sidebar" style="padding: 0;">
                 <ul class="nav sidenav-nav">
                     <li>
@@ -249,11 +281,6 @@
                     <li>
                         <a href="../modules/drink/drink.php">
                             <p class="y">家具資訊</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="basicdrink.html">
-                            <p class="y">樓層介紹</p>
                         </a>
                     </li>
                     <li>
@@ -269,14 +296,58 @@
                 </ul>
             </div>
 
-            <!-- 主内容区域 -->
+      
             <div class="col-sm-10">
                 <div class="main-content">
                     <h1>歡迎來到Drinker家具行</h1>
                     <p>此網站是專門販賣各式各樣的家具，以及會顯示各家具的來源，還有其材質跟價位，以及此Drinker家具行各樓層所販賣的家具。</p>
-                    <div class="img-container">
-                        <img src="../images/哭哭阿.png" alt="家具展示" style="max-width: 600px;">
+                    
+                    <h2 style="color: #2d3748; font-size: 22px; margin-top: 40px; margin-bottom: 20px; font-weight: 600;">我們的家具系列</h2>
+                    
+                    <!-- 家具图片展示区 -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 30px 0;">
+                        <div style="flex: 0 1 calc(33.333% - 20px); min-width: 200px; text-align: center;">
+                            <div class="furniture-card">
+                                <img src="../images/木製家具.png" alt="木製家具">
+                                <h3>木製家具</h3>
+                                <p>各種精緻木製家具</p>
+                            </div>
+                        </div>
+                        
+                        <div style="flex: 0 1 calc(33.333% - 20px); min-width: 200px; text-align: center;">
+                            <div class="furniture-card">
+                                <img src="../images/床.png" alt="床類家具">
+                                <h3>床類家具</h3>
+                                <p>舒適優質的床具</p>
+                            </div>
+                        </div>
+                        
+                        <div style="flex: 0 1 calc(33.333% - 20px); min-width: 200px; text-align: center;">
+                            <div class="furniture-card">
+                                <img src="../images/沙發.png" alt="沙發">
+                                <h3>沙發專區</h3>
+                                <p>時尚舒適沙發</p>
+                            </div>
+                        </div>
+                        
+                        <div style="flex: 0 1 calc(33.333% - 20px); min-width: 200px; text-align: center;">
+                            <div class="furniture-card">
+                                <img src="../images/日常家具.png" alt="日常家具">
+                                <h3>日常家具</h3>
+                                <p>生活必備家具</p>
+                            </div>
+                        </div>
+                        
+                        <div style="flex: 0 1 calc(33.333% - 20px); min-width: 200px; text-align: center;">
+                            <div class="furniture-card">
+                                <img src="../images/廚房用品.png" alt="廚房用品">
+                                <h3>廚房用品</h3>
+                                <p>專業廚房設備</p>
+                            </div>
+                        </div>
                     </div>
+                    
+                
                 </div>
             </div>
         </div>

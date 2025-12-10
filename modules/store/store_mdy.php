@@ -232,11 +232,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/basicdrink.html">
-                            <p class="y">樓層介紹</p>
-                        </a>
-                    </li>
-                    <li>
                         <a href="store.php">
                             <p class="y">樓層</p>
                         </a>

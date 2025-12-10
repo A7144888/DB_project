@@ -3,11 +3,11 @@ $servername = 'localhost';
 $user = 'root';
 $password = ''; 
 
-// 创建连接（不指定数据库）
+
 $conn = new mysqli($servername, $user, $password);
 
 if ($conn->connect_error) {
-    die("连接失败: " . $conn->connect_error);
+    die("連接失敗: " . $conn->connect_error);
 }
 
 
