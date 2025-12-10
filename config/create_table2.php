@@ -23,7 +23,8 @@
     $table2 ="CREATE TABLE Supplier (
     spName VARCHAR(10) NOT NULL,
     spPhone VARCHAR(15) NOT NULL,
-    spAddress VARCHAR(15) NOT NULL, 
+    spAddress VARCHAR(15) NOT NULL,
+    spTime VARCHAR(15) NOT NULL,
     PRIMARY KEY (spName)
     )";
     //table3 創建家具資訊（原 Drink 表）
