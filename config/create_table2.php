@@ -39,7 +39,7 @@
     FOREIGN KEY(stName) REFERENCES Store(stName) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(spName) REFERENCES Supplier(spName) ON DELETE CASCADE ON UPDATE CASCADE
     )";
-    
+    header('Location: create_data.php');
     $tables = [$table1, $table2, $table3];
     foreach($tables as $k => $sql){
         $query = @$conn->query($sql);
@@ -56,5 +56,5 @@
     }
     
     $conn->close();
-    // header('Location: create_data.php');
+   
 ?>
