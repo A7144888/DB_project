@@ -272,6 +272,11 @@
                             echo '<label>供應商地址:</label>';
                             echo '<input type="text" name="spAddress" value="'.$result->spAddress.'" required>';
                             echo '</div>';
+                              
+                            echo '<div class="form-group">';
+                            echo '<label>供應商營業時間:</label>';
+                            echo '<input type="text" name="spTime" value="'.$result->spTime.'" required>';
+                            echo '</div>'; 
                             
                             echo '<input type="submit" value="確認更改">';
                             echo '</form>';
