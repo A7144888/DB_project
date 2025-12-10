@@ -3,14 +3,12 @@
     //
     $stName         = $_GET["stName"];
     $stPhone        = $_POST["stPhone"];
-    $stWorkTime        = $_POST["stWorkTime"];
-    $stAddress      = $_POST["stAddress"];
+    $stWorkTime     = $_POST["stWorkTime"];
 
     $query = sprintf(
-        'update store set stPhone = "%s", stWorkTime = "%s", stAddress = "%s"  where stName = "%s"',
+        'update store set stPhone = "%s", stWorkTime = "%s" where stName = "%s"',
         $stPhone,
         $stWorkTime,
-        $stAddress,
         $stName
       );
       echo $query . '<br>';

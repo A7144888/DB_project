@@ -327,7 +327,6 @@
                             echo "<th>樓層</th>";
                             echo "<th>樓層分機</th>";
                             echo "<th>營業時間</th>";
-                            echo "<th>區域</th>";
                             echo "<th>操作</th>";
                             echo "</tr>";
                             
@@ -336,7 +335,6 @@
                                 echo "<td>".$result->stName."</td>";
                                 echo "<td>".$result->stPhone."</td>";
                                 echo "<td>".$result->stWorkTime."</td>";
-                                echo "<td>".$result->stAddress."</td>";
                                 echo '<td>';
                                 echo '<form method="POST" action="store_mdy.php?stName=' . $result->stName . '" style="display:inline;">';
                                 echo '<input type="submit" value="修改" class="btn-edit">';
@@ -365,10 +363,6 @@
                             <div class="form-group">
                                 <label>營業時間:</label>
                                 <input type="text" name="stWorkTime" required>
-                            </div>
-                            <div class="form-group">
-                                <label>區域:</label>
-                                <input type="text" name="stAddress" required>
                             </div>
                             <input type="submit" value="新增樓層">
                         </form>

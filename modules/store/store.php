@@ -246,7 +246,6 @@
                             echo "<th>樓層</th>";
                             echo "<th>樓層分機</th>";
                             echo "<th>營業時間</th>";
-                            echo "<th>區域</th>";
                             echo "</tr>";
                             
                             while($result=mysqli_fetch_object($stmt)){
@@ -254,7 +253,6 @@
                                 echo "<td>".$result->stName."</td>";
                                 echo "<td>".$result->stPhone."</td>";
                                 echo "<td>".$result->stWorkTime."</td>";
-                                echo "<td>".$result->stAddress."</td>";
                                 echo "</tr>";
                             }
                             echo "</table>";

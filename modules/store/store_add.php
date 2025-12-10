@@ -6,11 +6,10 @@
     $stName         = $_POST["stName"];
     $stPhone        = $_POST["stPhone"];
     $stWorkTime     = $_POST["stWorkTime"];
-    $stAddress      = $_POST["stAddress"];
 
-    $query = ("Insert into store values(?,?,?,?)");
+    $query = ("Insert into store values(?,?,?)");
     $stmt = $db->prepare($query);
-    $stmt->bind_param("ssss", $stName, $stPhone, $stWorkTime, $stAddress);
+    $stmt->bind_param("sss", $stName, $stPhone, $stWorkTime);
     $stmt->execute();
 
     header('Location: store_edit.php');

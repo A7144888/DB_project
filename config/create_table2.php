@@ -17,7 +17,6 @@
     stName VARCHAR(10) NOT NULL,
     stPhone VARCHAR(15) NOT NULL,
     stWorkTime VARCHAR(15) NOT NULL,
-    stAddress VARCHAR(15) NOT NULL, 
     PRIMARY KEY (stName)
     )";
     //table2 創建供應商

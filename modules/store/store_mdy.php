@@ -273,11 +273,6 @@
                             echo '<input type="text" name="stWorkTime" value="'.$result->stWorkTime.'" required>';
                             echo '</div>';
                             
-                            echo '<div class="form-group">';
-                            echo '<label>區域:</label>';
-                            echo '<input type="text" name="stAddress" value="'.$result->stAddress.'" required>';
-                            echo '</div>';
-                            
                             echo '<input type="submit" value="確認更改">';
                             echo '</form>';
                             echo '</div>';

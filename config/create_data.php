@@ -2,15 +2,15 @@
 include "db_conn.php";
 
 //增加樓層資訊（家具行樓層）
-$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`,`stAddress`) VALUE ('1F木製家具區','02-2345-6001','10:00-22:00','台北市中正區') ";
+$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`) VALUE ('1F木製家具區','02-2345-6001','10:00-22:00') ";
 $result = mysqli_query($db,$sql);
-$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`,`stAddress`) VALUE ('2F沙發專區','02-2345-6002','10:00-22:00','台北市中正區') ";
+$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`) VALUE ('2F沙發專區','02-2345-6002','10:00-22:00') ";
 $result = mysqli_query($db,$sql);
-$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`,`stAddress`) VALUE ('3F床具專區','02-2345-6003','10:00-22:00','台北市中正區') ";
+$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`) VALUE ('3F床具專區','02-2345-6003','10:00-22:00') ";
 $result = mysqli_query($db,$sql);
-$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`,`stAddress`) VALUE ('4F廚房用品','02-2345-6004','10:00-22:00','台北市中正區') ";
+$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`) VALUE ('4F廚房用品','02-2345-6004','10:00-22:00') ";
 $result = mysqli_query($db,$sql);
-$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`,`stAddress`) VALUE ('5F日常家具','02-2345-6005','10:00-22:00','台北市中正區') ";
+$sql = "INSERT INTO  `store` (`stName`,`stPhone`,`stWorkTime`) VALUE ('5F日常家具','02-2345-6005','10:00-22:00') ";
 $result = mysqli_query($db,$sql);
 
 //增加供應商
