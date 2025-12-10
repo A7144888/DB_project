@@ -259,6 +259,7 @@
                                 echo "<td>".$result->spName."</td>";
                                 echo "<td>".$result->spPhone."</td>";
                                 echo "<td>".$result->spAddress."</td>";
+                                echo "<td>".$result->spTime."</td>";
                                 echo "</tr>";
                             }
                             echo "</table>";
